@@ -16,26 +16,8 @@ function UserInput(input)
 function Dot() 
 {
 
-   let present = String(document.getElementById("result").value)
-   let newval = present+"."
-   var spresent = newval.split("");
-
-   console.log("pres: "+present);
-   console.log("new: "+newval);
-   console.log("spres: "+spresent);
-   if (spresent[0] == ".") 
-   {
-      console.log("first if = "+true);
-      document.getElementById("result").value = "0"+newval;
-   }
-   else
-   {
-      console.log("pres: "+present);
-      console.log("new: "+newval);
-      console.log("spres: "+spresent);
-      console.log("first if = "+false);
-      UserInput(".");
-   }
+   document.getElementById("dot").disabled = true;
+   UserInput(".");
 }
 
 function Clear()
@@ -83,6 +65,7 @@ function Operator(operate)
    {
       operator_hold = '+';
       document.getElementById("equation").value = firstVal+"+";
+      document.getElementById("dot").disabled = false;
       console.log("ope:"+operator_hold);
       console.log("fval:"+firstVal);
       console.log("sval:"+secVal);
@@ -91,6 +74,7 @@ function Operator(operate)
    {
       operator_hold = '-';
       document.getElementById("equation").value = firstVal+"-";
+      document.getElementById("dot").disabled = false;
       console.log("ope:"+operator_hold);
       console.log("fval:"+firstVal);
       console.log("sval:"+secVal);
@@ -99,6 +83,7 @@ function Operator(operate)
    {
       operator_hold = '*';
       document.getElementById("equation").value = firstVal+"*";
+      document.getElementById("dot").disabled = false;
       console.log("ope:"+operator_hold);
       console.log("fval:"+firstVal);
       console.log("sval:"+secVal);
@@ -107,6 +92,7 @@ function Operator(operate)
    {
       operator_hold = '/';
       document.getElementById("equation").value = firstVal+"/";
+      document.getElementById("dot").disabled = false;
       console.log("ope:"+operator_hold);
       console.log("fval:"+firstVal);
       console.log("sval:"+secVal);
@@ -115,6 +101,7 @@ function Operator(operate)
    {
       operator_hold = '%';
       document.getElementById("equation").value = firstVal+"%";
+      document.getElementById("dot").disabled = false;
       console.log("ope"+operator_hold);
       console.log("fval"+firstVal);
       console.log("sval"+secVal);
